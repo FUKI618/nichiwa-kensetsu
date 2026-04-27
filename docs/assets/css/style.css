@@ -212,21 +212,22 @@ button { font: inherit; cursor: pointer; background: none; border: 0; color: inh
   color: var(--c-off);
   overflow: hidden;
 }
-.hero__bg { position: absolute; inset: 0; }
-.hero__bg img,
-.hero__bg video { width: 100%; height: 100%; object-fit: cover; }
-.hero__bg-video {
-  position: absolute; inset: 0; z-index: 1;
-  opacity: 0; transition: opacity 1600ms cubic-bezier(.4, 0, .2, 1);
-  will-change: opacity;
-}
-.hero__bg-video.is-active { opacity: 1; z-index: 2; }
+.hero__bg { position: absolute; inset: 0; overflow: hidden; }
+.hero__bg img { width: 100%; height: 100%; object-fit: cover; }
 .hero__bg-img { position: absolute; inset: 0; z-index: 0; }
-@media (prefers-reduced-motion: reduce) {
-  .hero__bg-video { display: none; }
+
+/* ----- Ken Burns subtle motion (gentle zoom + pan) ----- */
+.hero__bg-img--ken {
+  transform-origin: 50% 50%;
+  animation: kenBurns 22s cubic-bezier(.45, 0, .25, 1) infinite alternate;
+  will-change: transform;
 }
-@media (max-width: 639px) {
-  .hero__bg-video { display: none; }
+@keyframes kenBurns {
+  0%   { transform: scale(1.04) translate3d(-1.2%, -0.6%, 0); }
+  100% { transform: scale(1.14) translate3d(1.6%, 0.8%, 0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero__bg-img--ken { animation: none; transform: scale(1.06); }
 }
 .hero__bg::after {
   content: ""; position: absolute; inset: 0;
