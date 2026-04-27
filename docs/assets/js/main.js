@@ -23,7 +23,7 @@
     initHeroVideoRotator();
   });
 
-  /* ---------- Hero video rotator (cross-fade between multiple <video>) ---------- */
+  /* ---------- Hero video rotator (continuous playback + opacity crossfade) ---------- */
   function initHeroVideoRotator() {
     if (NW.prefersReducedMotion()) return;
     const root = document.querySelector("[data-hero-rotator]");
@@ -31,23 +31,28 @@
     const vids = Array.from(root.querySelectorAll(".hero__bg-video"));
     if (vids.length < 2) return;
 
-    vids[0].play().catch(() => {});
+    // Both videos play continuously in background; opacity controls visibility.
+    vids.forEach((v) => {
+      v.play().catch(() => {});
+    });
 
-    vids.forEach((v, i) => {
-      v.addEventListener("ended", () => {
-        const next = (i + 1) % vids.length;
-        const nextVid = vids[next];
-        nextVid.currentTime = 0;
-        nextVid.play().catch(() => {});
-        nextVid.classList.add("is-active");
-        requestAnimationFrame(() => {
-          v.classList.remove("is-active");
-          setTimeout(() => {
-            v.pause();
-            v.currentTime = 0;
-          }, 1500);
-        });
-      });
+    // Wait until both have enough data to display, then start rotation.
+    const ready = vids.map(
+      (v) =>
+        new Promise((resolve) => {
+          if (v.readyState >= 3) resolve();
+          else v.addEventListener("canplay", () => resolve(), { once: true });
+        })
+    );
+    Promise.all(ready).then(() => {
+      let active = 0;
+      const HOLD_MS = 7000; // each clip visible for ~7s, then 1.4s crossfade
+      setInterval(() => {
+        const next = (active + 1) % vids.length;
+        vids[next].classList.add("is-active");
+        vids[active].classList.remove("is-active");
+        active = next;
+      }, HOLD_MS);
     });
   }
 
