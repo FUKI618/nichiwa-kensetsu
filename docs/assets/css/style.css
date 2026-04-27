@@ -213,7 +213,17 @@ button { font: inherit; cursor: pointer; background: none; border: 0; color: inh
   overflow: hidden;
 }
 .hero__bg { position: absolute; inset: 0; }
-.hero__bg img { width: 100%; height: 100%; object-fit: cover; }
+.hero__bg img,
+.hero__bg video { width: 100%; height: 100%; object-fit: cover; }
+.hero__bg-video { position: absolute; inset: 0; z-index: 1; }
+.hero__bg-img   { position: absolute; inset: 0; z-index: 0; }
+@media (prefers-reduced-motion: reduce) {
+  .hero__bg-video { display: none; }
+}
+@media (max-width: 639px) {
+  /* Mobile: video is heavier than payoff. Hide video, show static image. */
+  .hero__bg-video { display: none; }
+}
 .hero__bg::after {
   content: ""; position: absolute; inset: 0;
   background: linear-gradient(180deg, rgba(15,27,45,.55) 0%, rgba(15,27,45,.78) 65%, rgba(15,27,45,.92) 100%);

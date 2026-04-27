@@ -200,7 +200,11 @@
 ============================================================ -->
 <section id="top" class="hero" aria-label="ヒーロー">
   <div class="hero__bg">
-    <img src="assets/img/hero/hero-01.webp" alt="" width="2400" height="1350" loading="eager" fetchpriority="high" />
+    <video class="hero__bg-video" autoplay muted loop playsinline preload="auto"
+           poster="assets/img/hero/hero-01.webp" aria-hidden="true">
+      <source src="assets/img/hero/hero-01.mp4" type="video/mp4" />
+    </video>
+    <img class="hero__bg-img" src="assets/img/hero/hero-01.webp" alt="" width="2400" height="1350" loading="eager" fetchpriority="high" />
   </div>
   <div class="hero__diagonal" aria-hidden="true"></div>
 
