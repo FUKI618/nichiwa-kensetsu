@@ -1,0 +1,64 @@
+/* ==========================================================================
+   日和建設 - Animations
+   IntersectionObserver連動のリビールと、ヒーロー文字の段組みアニメ
+   ========================================================================== */
+
+/* ----- Reveal base (IntersectionObserver toggles .is-inview) ----- */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 800ms cubic-bezier(.2,.7,.2,1), transform 800ms cubic-bezier(.2,.7,.2,1);
+  will-change: opacity, transform;
+}
+.reveal.is-inview { opacity: 1; transform: translateY(0); }
+
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 720ms cubic-bezier(.2,.7,.2,1), transform 720ms cubic-bezier(.2,.7,.2,1);
+}
+.reveal-stagger.is-inview > *:nth-child(1) { transition-delay: 0ms; }
+.reveal-stagger.is-inview > *:nth-child(2) { transition-delay: 90ms; }
+.reveal-stagger.is-inview > *:nth-child(3) { transition-delay: 180ms; }
+.reveal-stagger.is-inview > *:nth-child(4) { transition-delay: 270ms; }
+.reveal-stagger.is-inview > *:nth-child(5) { transition-delay: 360ms; }
+.reveal-stagger.is-inview > *:nth-child(6) { transition-delay: 450ms; }
+.reveal-stagger.is-inview > * { opacity: 1; transform: translateY(0); }
+
+/* ----- Hero text reveal (JS-gated; visible by default for noscript fallback) ----- */
+.hero__title span { display: block; }
+.hero.js-anim .hero__title span,
+.hero.js-anim .hero__eyebrow,
+.hero.js-anim .hero__sub,
+.hero.js-anim .hero__cta {
+  opacity: 0; transform: translateY(16px);
+  transition: opacity 800ms cubic-bezier(.2,.7,.2,1), transform 800ms cubic-bezier(.2,.7,.2,1);
+}
+.hero.js-anim .hero__title span { transform: translateY(28px); transition-duration: 900ms; }
+.hero.js-anim.is-loaded .hero__title span:nth-child(1) { transition-delay: 200ms; opacity: 1; transform: translateY(0); }
+.hero.js-anim.is-loaded .hero__title span:nth-child(2) { transition-delay: 460ms; opacity: 1; transform: translateY(0); }
+.hero.js-anim.is-loaded .hero__eyebrow { transition-delay: 100ms; opacity: 1; transform: translateY(0); }
+.hero.js-anim.is-loaded .hero__sub     { transition-delay: 760ms; opacity: 1; transform: translateY(0); }
+.hero.js-anim.is-loaded .hero__cta     { transition-delay: 920ms; opacity: 1; transform: translateY(0); }
+
+/* ----- Reasons spine grow ----- */
+.reasons-list { --spine: 0; }
+.reasons-list::before {
+  height: var(--spine);
+  transition: height 1200ms cubic-bezier(.2,.7,.2,1);
+}
+.reasons-list.is-inview { --spine: 100%; }
+.reasons-list.is-inview::before { height: 100%; }
+
+/* ----- Number count-up base ----- */
+.kpi__num[data-target] { font-variant-numeric: tabular-nums; }
+
+/* ----- Reduced motion ----- */
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .reveal-stagger > *,
+  .hero__title span, .hero__eyebrow, .hero__sub, .hero__cta {
+    opacity: 1 !important; transform: none !important; transition: none !important;
+  }
+  .reasons-list::before { height: 100% !important; }
+  .hero__scroll::after { animation: none !important; }
+}

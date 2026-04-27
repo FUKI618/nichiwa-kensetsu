@@ -1,0 +1,29 @@
+# Secrets
+.env
+.env.*
+!.env.example
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+
+# Python
+__pycache__/
+*.pyc
+
+# Playwright MCP cache
+.playwright-mcp/
+
+# Internal harness/memory
+.harness-mem/
+.claude/
+**/.claude/
+
+# Build artifacts
+node_modules/
+dist/
+.next/
+
+# Personal notes
+notes/
