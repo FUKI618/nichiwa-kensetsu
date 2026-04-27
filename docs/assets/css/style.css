@@ -215,13 +215,16 @@ button { font: inherit; cursor: pointer; background: none; border: 0; color: inh
 .hero__bg { position: absolute; inset: 0; }
 .hero__bg img,
 .hero__bg video { width: 100%; height: 100%; object-fit: cover; }
-.hero__bg-video { position: absolute; inset: 0; z-index: 1; }
-.hero__bg-img   { position: absolute; inset: 0; z-index: 0; }
+.hero__bg-video {
+  position: absolute; inset: 0; z-index: 1;
+  opacity: 0; transition: opacity 1400ms ease;
+}
+.hero__bg-video.is-active { opacity: 1; }
+.hero__bg-img { position: absolute; inset: 0; z-index: 0; }
 @media (prefers-reduced-motion: reduce) {
   .hero__bg-video { display: none; }
 }
 @media (max-width: 639px) {
-  /* Mobile: video is heavier than payoff. Hide video, show static image. */
   .hero__bg-video { display: none; }
 }
 .hero__bg::after {
