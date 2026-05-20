@@ -27,3 +27,7 @@ dist/
 
 # Personal notes
 notes/
+
+# Mobile audit transient artifacts
+docs/.claude/audit-screenshots/
+docs/.claude/audit-report.json
