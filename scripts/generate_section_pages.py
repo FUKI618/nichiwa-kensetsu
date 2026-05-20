@@ -29,7 +29,8 @@ HEADER = '''<header class="site-header is-scrolled" role="banner">
       <a href="services/">事業内容</a>
       <a href="works/">施工事例</a>
       <a href="sustainability/">サステナビリティ</a>
-      <a href="strengths/">私たちの強み</a>
+      <a href="culture/">人的資本経営</a>
+      <a href="blog/">ブログ</a>
       <a href="news/">お知らせ</a>
       <a href="recruit.html">採用情報</a>
     </nav>
@@ -61,7 +62,9 @@ HEADER = '''<header class="site-header is-scrolled" role="banner">
     <li><a href="services/coating.html">塗装・外壁工事<small>COATING</small></a></li>
     <li><a href="works/">施工事例<small>WORKS</small></a></li>
     <li><a href="sustainability/">サステナビリティ<small>SUSTAINABILITY</small></a></li>
+    <li><a href="culture/">人的資本経営<small>OUR PEOPLE</small></a></li>
     <li><a href="strengths/">私たちの強み<small>STRENGTHS</small></a></li>
+    <li><a href="blog/">ブログ<small>BLOG</small></a></li>
     <li><a href="news/">お知らせ<small>NEWS</small></a></li>
     <li><a href="company/profile.html">会社概要<small>PROFILE</small></a></li>
     <li><a href="recruit.html">採用情報<small>RECRUIT</small></a></li>
@@ -252,10 +255,15 @@ PAGES["company/index.html"] = {
             {"img": "assets/img/reasons/supervisor.webp", "title": "代表メッセージ", "num_en": "MESSAGE", "desc": "代表取締役 吉田 光輝が、創業の背景と日和建設がこれから向き合う仕事への想いをお伝えします。", "href": "company/message.html"},
             {"img": "assets/img/services/coating.webp", "title": "会社概要", "num_en": "PROFILE", "desc": "商号・所在地・許認可・資本金・従業員数など、株式会社 日和建設の基本情報。", "href": "company/profile.html"},
         ]),
-        ("HISTORY", "沿革・許可", [
+        ("STRUCTURE", "組織と拠点", [
+            {"img": "assets/img/reasons/supervisor.webp", "title": "役員一覧", "num_en": "LEADERSHIP", "desc": "代表取締役 吉田 光輝と、現場を知る経営層。日和建設の意思決定者をご紹介します。", "href": "company/leadership.html"},
+            {"img": "assets/img/hero/hero-real.webp", "title": "事業所一覧", "num_en": "OFFICES", "desc": "本社（堺市東区）／南大阪営業所／東京営業所の三拠点で、関西と関東圏に対応。", "href": "company/offices.html"},
+            {"img": "assets/img/services/coating.webp", "title": "企業活動の基盤", "num_en": "FOUNDATION", "desc": "ガバナンス・コンプライアンス・リスクマネジメント・倫理 ── 私たちの土台を支える四つの柱。", "href": "company/foundation.html"},
+        ]),
+        ("HISTORY &amp; CREDENTIALS", "沿革・許可", [
             {"img": "assets/img/services/asbestos.webp", "title": "沿革・歴史", "num_en": "HISTORY", "desc": "2021年7月、堺の事務所5名で創業。創業からの足どりと節目をご紹介します。", "href": "company/history.html"},
             {"img": "assets/img/company/permit.webp", "title": "許可・資格", "num_en": "LICENSE", "desc": "大阪府知事 解体業許可 第1494号。当社の保有許可・資格・所属団体について。", "href": "company/license.html"},
-            {"img": "assets/img/hero/hero-real.webp", "title": "事業内容", "num_en": "SERVICES", "desc": "解体工事・アスベスト除去・塗装の三事業について、それぞれの取り組みをご紹介します。", "href": "services/"},
+            {"img": "assets/img/services/demolition.webp", "title": "事業内容", "num_en": "SERVICES", "desc": "解体工事・アスベスト除去・塗装の三事業について、それぞれの取り組みをご紹介します。", "href": "services/"},
         ]),
     ],
 }
