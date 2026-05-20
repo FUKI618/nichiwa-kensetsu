@@ -66,6 +66,58 @@ text = re.sub(
     flags=re.DOTALL,
 )
 
+# 4) Services cards desc を実テキスト（元サイト準拠）へ
+text = text.replace(
+    '木造、鉄骨、RC、そして部分解体まで全工種対応。近隣を歩いて挨拶する地道な合意形成と、現場で積み上げた施工管理。「壊す」を雑にしない、それが日和の作法です。',
+    '建築リフォームと同時に解体工事業を自社で請け負っております。近隣への挨拶はもちろん、町を汚さないよう、環境への配慮を忘れずに作業を行うよう、職人全員に指導をしております。',
+)
+text = text.replace(
+    '粉じんを外に出さない封じ込め、レベル1〜3 対応、行政手続きの代行まで。500 件超で培った段取りで、住民・労働者・大気の三方向に責任を持ちます。',
+    'アスベスト対策を重要な社会問題と捉え、適正な除去・処理を行うとともに、大気汚染防止に努め、環境保全に貢献していきます。作業に従事する従業員と家族の健康を守るため、安全な作業環境作りも行っています。',
+)
+text = text.replace(
+    '創業当初の主事業は塗装でした。だからこそ、外壁の劣化を「見抜く眼」と「適切な材料選定」が私たちの土台。塗り替え、解体前診断、シーリングまで。',
+    '塗装の技術だけではなく、外壁の知識も磨き上げようと常に前向きに作業を行っております。日和建設 外壁診断のプロによる診断を、ぜひ一度お試しください。',
+)
+
+# 5) FAQ セクション全削除（架空Q&A 8問） → 元サイトの実5問へ置換
+real_faq = '''<section id="faq" class="section" aria-label="よくあるご質問">
+  <div class="container">
+    <span class="eyebrow reveal">FAQ</span>
+    <h2 class="section-title reveal">よくいただくご質問。</h2>
+
+    <div class="faq-grid reveal">
+      <div class="faq-item">
+        <button type="button" class="faq-q" aria-expanded="false"><span>リサイクル届の対応は可能ですか？</span><span class="faq-icon" aria-hidden="true"></span></button>
+        <div class="faq-a"><div class="faq-a__inner">弊社にて対応させていただきます。</div></div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-q" aria-expanded="false"><span>残土処理および埋め戻しの対応は可能ですか？</span><span class="faq-icon" aria-hidden="true"></span></button>
+        <div class="faq-a"><div class="faq-a__inner">対応可能です。</div></div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-q" aria-expanded="false"><span>石綿（アスベスト）含有調査の対応は可能ですか？</span><span class="faq-icon" aria-hidden="true"></span></button>
+        <div class="faq-a"><div class="faq-a__inner">石綿検体の採取および含有調査、対応させていただきます。</div></div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-q" aria-expanded="false"><span>見積りしてもらうだけになってもいいですか？</span><span class="faq-icon" aria-hidden="true"></span></button>
+        <div class="faq-a"><div class="faq-a__inner">お見積もりだけでも大歓迎です（無料）。案件以外の不動産業の方のご相談も常に対応しています。</div></div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-q" aria-expanded="false"><span>解体業の方は無愛想なイメージがありますが…</span><span class="faq-icon" aria-hidden="true"></span></button>
+        <div class="faq-a"><div class="faq-a__inner">弊社では、解体業のイメージを変えるため、作業員にも理念を共有しています。小さな心がけから印象を変えていけるように心がけています。</div></div>
+      </div>
+    </div>
+  </div>
+</section>'''
+text = re.sub(
+    r'<section id="faq".*?</section>',
+    real_faq,
+    text,
+    count=1,
+    flags=re.DOTALL,
+)
+
 # 4) ABOUT teaser: 経営理念カード → 代表挨拶カード
 text = text.replace(
     '<img src="assets/img/services/demolition.webp" alt="経営理念" loading="lazy" />',
