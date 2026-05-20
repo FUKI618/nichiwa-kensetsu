@@ -22,17 +22,10 @@ NEW_HEADER = '''<header class="site-header" role="banner">
       <a href="services/">事業内容</a>
       <a href="works/">施工事例</a>
       <a href="recruit.html">採用情報</a>
+      <a href="contact.html">お問い合わせ</a>
     </nav>
 
     <div class="header-actions">
-      <a class="header-tel" href="tel:0722390126" aria-label="電話で問い合わせ 072-239-0126">
-        <span>072-239-0126</span>
-        <small>受付 8:00 – 19:00（日祝除く）</small>
-      </a>
-      <a class="btn btn-gold" href="contact.html">
-        <span>無料 現地調査を依頼する</span>
-        <span class="arrow" aria-hidden="true"></span>
-      </a>
       <button type="button" class="menu-btn" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-nav">
         <span class="bar" aria-hidden="true"></span>
       </button>
@@ -57,9 +50,8 @@ NEW_HEADER = '''<header class="site-header" role="banner">
     <li><a href="recruit.html">採用情報<small>RECRUIT</small></a></li>
     <li><a href="contact.html">お問い合わせ<small>CONTACT</small></a></li>
   </ul>
-  <div class="mobile-nav__cta">
-    <a class="btn btn-gold" href="contact.html"><span>無料 現地調査を依頼する</span><span class="arrow" aria-hidden="true"></span></a>
-    <a class="btn btn-ghost" href="tel:0722390126"><span>072-239-0126 ／ 受付 8:00–19:00</span></a>
+  <div class="mobile-nav__contact">
+    <a href="contact.html">お問い合わせ<small>CONTACT</small></a>
   </div>
 </nav>'''
 

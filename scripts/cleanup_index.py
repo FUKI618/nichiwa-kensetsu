@@ -58,6 +58,14 @@ text = re.sub(
 text = re.sub(r'\s*<li><a href="#news">お知らせ</a></li>', '', text)
 text = re.sub(r'\s*<li><a href="news/">お知らせ</a></li>', '', text)
 
+# 3d) CTA FINAL セクションを削除（コーポレートHPでは使わないLPパターン）
+text = re.sub(
+    r'<!-- =+\s*\n\s*CTA FINAL.*?(?=<!-- =+\s*\n\s*FOOTER)',
+    '',
+    text,
+    flags=re.DOTALL,
+)
+
 # 4) ABOUT teaser: 経営理念カード → 代表挨拶カード
 text = text.replace(
     '<img src="assets/img/services/demolition.webp" alt="経営理念" loading="lazy" />',
