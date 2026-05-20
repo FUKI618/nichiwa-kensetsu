@@ -245,9 +245,6 @@ button { font: inherit; cursor: pointer; background: none; border: 0; color: inh
   .hero__bg-img--ken { animation: none; transform: scale(1.06); }
   .hero__bg-video { display: none; }
 }
-@media (max-width: 639px) {
-  .hero__bg-video { display: none; }
-}
 .hero__bg::after {
   content: ""; position: absolute; inset: 0;
   background: linear-gradient(180deg, rgba(15,27,45,.55) 0%, rgba(15,27,45,.78) 65%, rgba(15,27,45,.92) 100%);
