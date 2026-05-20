@@ -20,9 +20,8 @@ DOCS = ROOT / "docs"
 # 共通ヘッダー（restructure_nav.pyのものと同一）
 HEADER = '''<header class="site-header is-scrolled" role="banner">
   <div class="site-header__inner">
-    <a class="brand" href="index.html" aria-label="日和建設 トップ">
-      <span class="brand__jp">株式会社 日和建設</span>
-      <span class="brand__en">NICHIWA KENSETSU</span>
+    <a class="brand" href="index.html" aria-label="株式会社 日和建設 トップ">
+      <img class="brand__logo" src="assets/img/brand/logo.png" alt="株式会社 日和建設" width="200" height="40" loading="eager" />
     </a>
 
     <nav class="global-nav" aria-label="グローバルナビゲーション">
@@ -79,8 +78,7 @@ FOOTER = '''<footer class="site-footer">
     <div class="footer-grid">
       <div>
         <span class="brand brand--footer" aria-hidden="true">
-          <span class="brand__jp" style="color:#fff;">株式会社 日和建設</span>
-          <span class="brand__en">NICHIWA KENSETSU</span>
+          <img class="brand__logo" src="assets/img/brand/logo.png" alt="" width="200" height="40" loading="lazy" />
         </span>
         <p style="margin-top:20px;">
           〒599-8126<br />大阪府堺市東区大美野 171-36<br />
@@ -265,7 +263,7 @@ PAGES["company/index.html"] = {
 # ----- /services/index.html -----
 PAGES["services/index.html"] = {
     "title": "事業内容｜株式会社 日和建設",
-    "description": "解体工事・アスベスト除去・塗装外壁の3事業。木造67.8万円〜の明朗価格、レベル1〜3対応のアスベスト除去、創業由来の塗装事業。",
+    "description": "解体工事・アスベスト除去・塗装外壁の3事業。レベル1〜3対応のアスベスト除去、創業由来の塗装事業、近隣合意を契約より先に。",
     "canonical": "https://nichiwa-kensetu.com/services/",
     "category": "事業内容",
     "category_en": "SERVICES",
@@ -275,7 +273,7 @@ PAGES["services/index.html"] = {
     "bg": "assets/img/services/demolition.webp",
     "sections": [
         ("SERVICES", "3つの事業領域", [
-            {"img": "assets/img/services/demolition.webp", "num": "No. 01", "title": "解体工事", "num_en": "DEMOLITION", "desc": "木造・鉄骨・RC造・プチ解体まで全工種対応。20坪67.8万円〜の明朗価格、近隣を歩いて挨拶する地道な合意形成。「壊す」を雑にしない、それが日和の作法です。", "href": "services/demolition.html"},
+            {"img": "assets/img/services/demolition.webp", "num": "No. 01", "title": "解体工事", "num_en": "DEMOLITION", "desc": "木造・鉄骨・RC造・部分解体まで全工種対応。近隣を歩いて挨拶する地道な合意形成と、現場で積み上げた施工管理。「壊す」を雑にしない、それが日和の作法です。", "href": "services/demolition.html"},
             {"img": "assets/img/services/asbestos.webp", "num": "No. 02", "title": "アスベスト除去", "num_en": "ASBESTOS", "desc": "粉じんを外に出さない封じ込め、レベル1〜3対応、行政手続きの代行まで。500件超で培った段取りで、住民・労働者・大気の三方向に責任を持ちます。", "href": "services/asbestos.html"},
             {"img": "assets/img/services/coating.webp", "num": "No. 03", "title": "塗装・外壁工事", "num_en": "COATING", "desc": "創業当初の主事業は塗装でした。だからこそ、外壁の劣化を「見抜く眼」と「適切な材料選定」が私たちの土台。塗り替え、解体前診断、シーリングまで。", "href": "services/coating.html"},
         ]),

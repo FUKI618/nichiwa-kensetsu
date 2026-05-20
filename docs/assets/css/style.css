@@ -152,8 +152,15 @@ button { font: inherit; cursor: pointer; background: none; border: 0; color: inh
 @media (max-width: 1023px) { .site-header__inner { height: 64px; } }
 
 .brand {
-  display: flex; flex-direction: column; line-height: 1.15;
+  display: inline-flex; align-items: center; line-height: 1;
 }
+.brand__logo {
+  display: block; width: auto; height: 36px;
+  object-fit: contain; object-position: left center;
+}
+.brand--footer .brand__logo { height: 44px; }
+@media (max-width: 1023px) { .brand__logo { height: 28px; } }
+/* Legacy text brand styles (kept for backward compatibility) */
 .brand__jp { font-family: var(--ff-serif-jp); font-size: 18px; font-weight: 700; letter-spacing: .08em; }
 .brand__en { font-family: var(--ff-sans-en); font-size: 10px; font-weight: 500; letter-spacing: .28em; color: var(--c-brass); margin-top: 4px; }
 @media (max-width: 1023px) { .brand__jp { font-size: 16px; } .brand__en { font-size: 9px; } }

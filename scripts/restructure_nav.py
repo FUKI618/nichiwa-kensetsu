@@ -13,9 +13,8 @@ DOCS = ROOT / "docs"
 
 NEW_HEADER = '''<header class="site-header" role="banner">
   <div class="site-header__inner">
-    <a class="brand" href="index.html" aria-label="日和建設 トップ">
-      <span class="brand__jp">株式会社 日和建設</span>
-      <span class="brand__en">NICHIWA KENSETSU</span>
+    <a class="brand" href="index.html" aria-label="株式会社 日和建設 トップ">
+      <img class="brand__logo" src="assets/img/brand/logo.png" alt="株式会社 日和建設" width="200" height="40" loading="eager" />
     </a>
 
     <nav class="global-nav" aria-label="グローバルナビゲーション">
