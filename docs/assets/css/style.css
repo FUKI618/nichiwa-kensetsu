@@ -447,6 +447,11 @@ button { font: inherit; cursor: pointer; background: none; border: 0; color: inh
 .company-table th, .company-table td { padding: 18px 0; text-align: left; vertical-align: top; border-bottom: 1px solid var(--c-line-dark); font-size: 14.5px; line-height: 1.85; }
 .company-table th { width: 32%; font-weight: 500; color: var(--c-brass); font-family: var(--ff-sans-en); font-size: 12px; letter-spacing: .18em; text-transform: uppercase; padding-top: 22px; }
 .company-table td { color: var(--c-off); }
+/* Paper section background variant — flip text & border to dark tones */
+.section--paper .company-table th,
+.section--paper .company-table td { border-bottom-color: var(--c-line); }
+.section--paper .company-table th { color: var(--c-brass-2); }
+.section--paper .company-table td { color: var(--c-text); }
 .company-aside img { width: 100%; max-width: 360px; aspect-ratio: 4/5; object-fit: cover; margin-left: auto; }
 .company-message {
   margin-top: 28px; padding-top: 28px; border-top: 1px solid var(--c-line-dark);
