@@ -104,6 +104,17 @@ text = re.sub(
     flags=re.DOTALL,
 )
 
+# X) WORKS セクション削除（施工事例はブログ形式の準備中ページに移行）
+text = re.sub(
+    r'<!-- =+\s*\n\s*WORKS.*?(?=<!-- =+\s*\n\s*(?:FLOW|COMPANY|FAQ|FOOTER))',
+    '',
+    text,
+    flags=re.DOTALL,
+)
+
+# X) フッターの works/ リンクを blog/ へ書き換え or 削除
+text = re.sub(r'\s*<li><a href="works/">[^<]+</a></li>', '', text)
+
 # X) JSON-LD から FAQPage / HowTo を削除（ページ上にもう存在しない）
 text = re.sub(
     r',\s*\{\s*"@type":\s*"FAQPage".*?\}(?=\s*[,\]])',
@@ -221,7 +232,7 @@ for pattern, name in [
     (r'href="strengths/"', 'broken strengths link'),
     (r'href="sustainability/"', 'broken sustainability link'),
     (r'href="culture/"', 'broken culture link'),
-    (r'href="blog/"', 'broken blog link'),
+    # blog/ link is intentional (blog placeholder section exists)
     (r'philosophy\.html', 'deleted philosophy link'),
     (r'reason__num', 'fake 4 reasons block'),
 ]:

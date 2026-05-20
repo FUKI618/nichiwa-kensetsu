@@ -267,19 +267,7 @@ PAGES = {
         "breadcrumb": [("ホーム", "index.html"), ("事業内容", "services/"), ("塗装工事業", "")],
         "body": COATING_BODY,
     },
-    "works/index.html": {
-        "title": "施工事例｜株式会社 日和建設",
-        "description": "日和建設の直近の施工事例。文化住宅・秦和ビル・大阪シティバス・法隆寺幼稚園・宝塚グリーンハイツ・仁徳ビルの解体工事ほか。",
-        "canonical": "https://nichiwa-kensetu.com/works/",
-        "category": "施工事例",
-        "category_en": "WORKS",
-        "h1": "施工事例。",
-        "h1_en": "Works",
-        "lede": "2025年1月時点で公開している、直近の施工実績です。",
-        "bg": "assets/img/works/work-01.webp",
-        "breadcrumb": [("ホーム", "index.html"), ("施工事例", "")],
-        "body": WORKS_INDEX_BODY,
-    },
+    # works/index.html removed — 施工事例 is now /blog/ placeholder per user request
 }
 
 
