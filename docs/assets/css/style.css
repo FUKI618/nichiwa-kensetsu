@@ -137,6 +137,13 @@ button { font: inherit; cursor: pointer; background: none; border: 0; color: inh
   -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--c-line-dark);
 }
+/* Subtle scrim at top to keep brand legible over any hero background */
+.site-header::before {
+  content: ""; position: absolute; inset: 0 0 auto 0; height: 100%;
+  background: linear-gradient(180deg, rgba(15,27,45,.55) 0%, rgba(15,27,45,.0) 100%);
+  pointer-events: none; z-index: -1;
+}
+.site-header.is-scrolled::before { display: none; }
 .site-header__inner {
   display: flex; align-items: center; justify-content: space-between;
   height: 84px; padding-inline: var(--pad-x);
@@ -151,11 +158,13 @@ button { font: inherit; cursor: pointer; background: none; border: 0; color: inh
 .brand__en { font-family: var(--ff-sans-en); font-size: 10px; font-weight: 500; letter-spacing: .28em; color: var(--c-brass); margin-top: 4px; }
 @media (max-width: 1023px) { .brand__jp { font-size: 16px; } .brand__en { font-size: 9px; } }
 
-.global-nav { display: flex; gap: 32px; }
+.global-nav { display: flex; gap: 24px; flex-wrap: nowrap; }
 .global-nav a {
-  font-family: var(--ff-sans-jp); font-weight: 500; font-size: 14px;
-  letter-spacing: .04em; padding: 8px 0; position: relative;
+  font-family: var(--ff-sans-jp); font-weight: 500; font-size: 13px;
+  letter-spacing: .02em; padding: 8px 0; position: relative;
+  white-space: nowrap;
 }
+@media (max-width: 1279px) { .global-nav { gap: 16px; } .global-nav a { font-size: 12px; } }
 .global-nav a::after {
   content: ""; position: absolute; left: 0; bottom: 0;
   width: 0; height: 1px; background: var(--c-brass);
@@ -557,6 +566,9 @@ button { font: inherit; cursor: pointer; background: none; border: 0; color: inh
 /* ----- Breadcrumbs ----- */
 .breadcrumbs { font-family: var(--ff-sans-jp); font-size: 12px; color: rgba(250,250,247,.7); letter-spacing: .08em; margin-bottom: 28px; }
 .breadcrumbs ol { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.breadcrumbs li { display: inline-flex; align-items: center; }
+.breadcrumbs li a { color: inherit; opacity: .85; }
+.breadcrumbs li a:hover { color: var(--c-brass); opacity: 1; }
 .breadcrumbs li::after { content: "／"; margin-left: 8px; color: rgba(250,250,247,.4); }
 .breadcrumbs li:last-child::after { content: ""; }
 .breadcrumbs li:last-child { color: var(--c-brass); }
