@@ -229,8 +229,6 @@ for pattern, name in [
     (r'data-target="500"', 'fake KPI 500'),
     (r'data-target="300"', 'fake KPI 300'),
     (r'sustain-card', 'fake sustainability cards'),
-    (r'href="strengths/"', 'broken strengths link'),
-    (r'href="sustainability/"', 'broken sustainability link'),
     (r'href="culture/"', 'broken culture link'),
     # blog/ link is intentional (blog placeholder section exists)
     (r'philosophy\.html', 'deleted philosophy link'),

@@ -20,7 +20,6 @@ NEW_HEADER = '''<header class="site-header" role="banner">
     <nav class="global-nav" aria-label="グローバルナビゲーション">
       <a href="company/">企業情報</a>
       <a href="services/">事業内容</a>
-      <a href="strengths/">強み</a>
       <a href="sustainability/">サステナビリティ</a>
       <a href="blog/">ブログ</a>
       <a href="recruit.html">採用情報</a>

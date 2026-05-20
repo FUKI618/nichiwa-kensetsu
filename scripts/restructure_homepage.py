@@ -100,7 +100,7 @@ TEASER_BLOCKS = '''<!-- ========================================================
         <a class="btn-link" href="strengths/">強み・技術力を詳しく見る</a>
       </div>
       <div class="teaser-split__media">
-        <img src="assets/img/services/demolition.webp" alt="解体現場で図面を確認する職人" width="800" height="600" loading="lazy" />
+        <img src="assets/img/strengths/strengths-hero.webp" alt="整然と並ぶ重機と分別された建材" width="800" height="600" loading="lazy" />
       </div>
     </div>
   </div>
@@ -113,7 +113,7 @@ TEASER_BLOCKS = '''<!-- ========================================================
   <div class="container">
     <div class="teaser-split teaser-split--reverse reveal">
       <div class="teaser-split__media">
-        <img src="assets/img/services/asbestos.webp" alt="アスベスト除去工事の安全管理" width="800" height="600" loading="lazy" />
+        <img src="assets/img/sustainability/sustainability-hero.webp" alt="解体跡地の整地と分別された廃材" width="800" height="600" loading="lazy" />
       </div>
       <div class="teaser-split__text">
         <span class="eyebrow" style="margin-bottom:24px;">SUSTAINABILITY</span>

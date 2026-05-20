@@ -93,6 +93,15 @@ SERVICES_INDEX = '''<section class="section">
         </div>
       </article>
     </div>
+
+    <div style="margin-top:80px; padding-top:48px; border-top:1px solid rgba(0,0,0,.1); display:grid; grid-template-columns: 1fr auto; gap: 32px; align-items: center;">
+      <div>
+        <span class="eyebrow" style="margin-bottom:16px;">OUR STRENGTHS</span>
+        <h3 style="font-family:var(--ff-sans-jp); font-size:clamp(22px, 2.4vw, 32px); font-weight:700; line-height:1.5; margin: 16px 0 12px;">三事業を貫く、四つの強み。</h3>
+        <p style="font-size:14.5px; line-height:2; color: var(--c-text-mute); max-width:680px;">建物の一生を両方向から知る／コンプライアンス教育／アスベストへの真摯な向き合い／三事業の一貫対応 ── 私たちが現場で大切にしてきた考え方。</p>
+      </div>
+      <a class="btn-link" href="strengths/">強み・技術力を詳しく見る</a>
+    </div>
   </div>
 </section>
 '''
