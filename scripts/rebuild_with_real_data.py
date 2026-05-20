@@ -22,27 +22,34 @@ ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / "docs"
 
 # ============================================================
-# CEO MESSAGE — 元サイトの実テキストを忠実に反映
+# CEO MESSAGE — TOPページコピー + 元サイト本文をミックスして再構成
+# ヘッダー画像は人物ではなく業種（解体現場）の cinematic 風景
 # ============================================================
 MESSAGE_BODY = '''<section class="section section--navy">
   <div class="container">
-    <div class="ceo-message__inner">
-      <div class="ceo-message__portrait reveal">
-        <img src="assets/img/reasons/supervisor.webp" alt="代表取締役 吉田 光輝" width="640" height="800" loading="lazy" />
+    <div style="max-width:760px; margin: 0 auto;">
+      <span class="ceo-message__caption reveal" style="display:block; margin-bottom:24px;">MESSAGE FROM CEO</span>
+      <h2 class="ceo-message__title reveal" style="font-family:var(--ff-serif-jp); font-weight:700; font-size:clamp(28px, 3.4vw, 44px); line-height:1.65; letter-spacing:.04em; margin-bottom:56px;">街の節目に、<br />立ち会う仕事を。</h2>
+
+      <div class="ceo-message__body reveal" style="font-size:15.5px; line-height:2.3; letter-spacing:.03em; color: rgba(250,250,247,.92);">
+        <p style="margin-bottom:24px;">数あるホームページの中から、株式会社 日和建設をご覧いただき、ありがとうございます。</p>
+
+        <p style="margin-bottom:24px;">私たちが向き合っているのは、街の「節目」です。古い建物の最後の一日と、次の街の最初の一日が出会う、その境目に立ち会うのが、解体・アスベスト除去・塗装という仕事です。</p>
+
+        <p style="margin-bottom:24px;">日和建設は創業以来、外壁リフォームに始まり、解体工事、アスベスト除去工事へと、お客様の声に応えながら事業を広げてまいりました。日本に生まれ、日本で商いをさせていただいている人間として、私たちが掲げている理念があります。</p>
+
+        <p style="margin: 40px 0; font-family:var(--ff-serif-jp); font-size:28px; font-weight:600; color: var(--c-brass); letter-spacing:.08em; text-align:center;">それは、「平和」です。</p>
+
+        <p style="margin-bottom:24px;">解体工事、アスベスト除去工事に対するイメージは、長らく不評ばかりでした。だからこそ私たちは、コンプライアンスと社会的マナーの教育に力を入れて取り組んでいます。挨拶を欠かさない、環境への配慮を忘れない ── そうした当たり前を、当たり前にできる組織にすること。それが私の第一の目標です。</p>
+
+        <p style="margin-bottom:24px;">解体工事のイメージを、クリーンに変えていきたい。騙し合い、いじめ、環境破壊、近隣への迷惑 ── そういったものから無縁の、平和な事業へ。小さな会社ながらも、業界に少しでも影響を与えていけるよう、日々鍛錬を続けてまいります。私たちのような若手がしっかりしないと、今の日本は変えられない。何事にも、その責任感を持って行動してまいります。</p>
+
+        <p style="margin-bottom:24px;">いい環境を、笑顔をお届けできるよう、現場・お客様・近隣の皆様と協力し合いながら、これからも仕事に取り組んでまいります。</p>
       </div>
-      <div>
-        <span class="ceo-message__caption reveal">MESSAGE FROM CEO</span>
-        <h2 class="ceo-message__title reveal">理念は、平和です。</h2>
-        <div class="ceo-message__body reveal">
-          <p>数あるホームページの中から株式会社 日和建設を見ていただき、ありがとうございます。</p>
-          <p>日和建設は創業以来、外壁リフォームに続き、解体工事ならびにアスベスト除去工事などのご依頼をお客様から頂いてまいりました。日本に生まれ、日本で商いをさせていただいている人間として、掲げている理念があります。<strong>その理念は「平和」です。</strong></p>
-          <p>解体工事、アスベスト除去工事に対するイメージは、不評ばかり。そのイメージを良くしたい思いから、私たちはコンプライアンス、社会的マナーの教育に力を入れて取り組んでいます。挨拶、環境への配慮 ── そうした当たり前にできる組織にすることが、私の目標です。解体工事のイメージをクリーンにできるようにすることを、第一の目標に。</p>
-          <p>騙し合い、いじめ、環境破壊、迷惑のない、<strong>平和な事業</strong>にできるよう、小さいながらも影響を与えていけるように、日々鍛錬していきます。私たちのような若手がしっかりしないと、今の日本は変えられない。何事にも、その責任感をもって行動していきます。いい環境、笑顔をお届けできるよう、協力し合って仕事をしたい。</p>
-        </div>
-        <div class="ceo-message__sign reveal">
-          <span class="ceo-message__sign-label">代表取締役</span>
-          <span class="ceo-message__sign-name">吉田 光輝</span>
-        </div>
+
+      <div class="ceo-message__sign reveal" style="margin-top:56px; padding-top:32px; border-top:1px solid var(--c-line-dark); text-align:right;">
+        <span style="font-family:var(--ff-sans-en); font-size:11px; letter-spacing:.24em; color:var(--c-brass); display:block; margin-bottom:8px;">代表取締役</span>
+        <span style="font-family:var(--ff-serif-jp); font-size:22px; font-weight:600; letter-spacing:.08em;">吉田 光輝</span>
       </div>
     </div>
   </div>
@@ -237,14 +244,14 @@ EMPLOYEES_BODY = '''<section class="section section--paper">
 PAGES = {
     "company/message.html": {
         "title": "代表挨拶｜株式会社 日和建設",
-        "description": "代表取締役 吉田 光輝より。日和建設の理念は「平和」。解体工事・アスベスト除去工事のイメージをクリーンに、コンプライアンスと社会的マナーの教育を軸に取り組んでいます。",
+        "description": "代表取締役 吉田 光輝より。日和建設の理念は「平和」── 街の節目に立ち会う仕事として、解体・アスベスト除去・塗装に誠実に取り組んでいます。",
         "canonical": "https://nichiwa-kensetu.com/company/message.html",
         "category": "代表挨拶",
         "category_en": "MESSAGE",
-        "h1": "理念は、平和です。",
+        "h1": "街の節目に、<br />立ち会う仕事を。",
         "h1_en": "Message from CEO",
-        "lede": "日和建設の理念は「平和」── 騙し合い、いじめ、環境破壊、迷惑のない、平和な事業をめざしています。代表取締役 吉田 光輝より。",
-        "bg": "assets/img/reasons/supervisor.webp",
+        "lede": "建物の最後の一日から、次の街の最初の一日まで ── 解体・アスベスト除去・塗装を通じて、街の節目に立ち会うのが、私たちの仕事です。",
+        "bg": "assets/img/message/message-hero.webp",
         "breadcrumb": [("ホーム", "index.html"), ("企業情報", "company/"), ("代表挨拶", "")],
         "body": MESSAGE_BODY,
     },
