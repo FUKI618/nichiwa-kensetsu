@@ -234,12 +234,16 @@ button { font: inherit; cursor: pointer; background: none; border: 0; color: inh
 @media (prefers-reduced-motion: reduce) {
   .hero__bg-video { display: none; }
 }
-/* Strengthened overlay: radial vignette + bottom darkening for text legibility */
+/* Subtle text-area scrim only.
+   v7.1 video is already graded muted/atmospheric, so we don't need
+   a heavy navy overlay here. Just a soft radial wash behind the headline
+   to guarantee legibility on the brightest frames, and a thin bottom
+   gradient to anchor the sub-copy. */
 .hero__bg::after {
   content: ""; position: absolute; inset: 0; z-index: 2;
   background:
-    radial-gradient(ellipse 90% 70% at 50% 50%, rgba(15,27,45,.35) 0%, rgba(15,27,45,.75) 70%, rgba(15,27,45,.88) 100%),
-    linear-gradient(180deg, rgba(15,27,45,.25) 0%, rgba(15,27,45,.55) 100%);
+    radial-gradient(ellipse 70% 50% at 50% 55%, rgba(15,27,45,.30) 0%, rgba(15,27,45,.10) 55%, rgba(15,27,45,0) 100%),
+    linear-gradient(180deg, rgba(15,27,45,0) 50%, rgba(15,27,45,.30) 100%);
   pointer-events: none;
 }
 .hero__diagonal { display: none; }
