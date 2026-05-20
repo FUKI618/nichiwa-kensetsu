@@ -474,6 +474,32 @@ button { font: inherit; cursor: pointer; background: none; border: 0; color: inh
 .company-table th, .company-table td { padding: 18px 0; text-align: left; vertical-align: top; border-bottom: 1px solid var(--c-line-dark); font-size: 14.5px; line-height: 1.85; }
 .company-table th { width: 32%; font-weight: 500; color: var(--c-brass); font-family: var(--ff-sans-en); font-size: 12px; letter-spacing: .18em; text-transform: uppercase; padding-top: 22px; }
 .company-table td { color: var(--c-off); }
+/* Split teaser block — text + image side-by-side (used on homepage strengths/sustainability) */
+.teaser-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 6vw, 96px);
+  align-items: center;
+}
+.teaser-split__text { display: flex; flex-direction: column; }
+.teaser-split__media { overflow: hidden; }
+.teaser-split__media img {
+  width: 100%; height: 100%; object-fit: cover;
+  aspect-ratio: 4 / 3;
+  transition: transform 1200ms var(--easing);
+}
+.teaser-split:hover .teaser-split__media img { transform: scale(1.04); }
+.teaser-split--reverse .teaser-split__text { order: 2; }
+.teaser-split--reverse .teaser-split__media { order: 1; }
+@media (max-width: 767px) {
+  .teaser-split, .teaser-split--reverse {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .teaser-split--reverse .teaser-split__text { order: unset; }
+  .teaser-split--reverse .teaser-split__media { order: unset; }
+}
+
 /* In-page anchor nav for unified /company/ — sticky horizontal strip */
 .company-anchors {
   position: sticky; top: 0; z-index: 30;
