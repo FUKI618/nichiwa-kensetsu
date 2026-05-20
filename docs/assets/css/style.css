@@ -470,6 +470,37 @@ button { font: inherit; cursor: pointer; background: none; border: 0; color: inh
 .company-table th, .company-table td { padding: 18px 0; text-align: left; vertical-align: top; border-bottom: 1px solid var(--c-line-dark); font-size: 14.5px; line-height: 1.85; }
 .company-table th { width: 32%; font-weight: 500; color: var(--c-brass); font-family: var(--ff-sans-en); font-size: 12px; letter-spacing: .18em; text-transform: uppercase; padding-top: 22px; }
 .company-table td { color: var(--c-off); }
+/* In-page anchor nav for unified /company/ — sticky horizontal strip */
+.company-anchors {
+  position: sticky; top: 0; z-index: 30;
+  background: rgba(15, 27, 45, .92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--c-line-dark);
+}
+.company-anchors ul {
+  list-style: none; padding: 0; margin: 0;
+  display: flex; justify-content: center; gap: clamp(16px, 3vw, 48px);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.company-anchors ul::-webkit-scrollbar { display: none; }
+.company-anchors a {
+  display: block; padding: 18px 4px; white-space: nowrap;
+  font-family: var(--ff-sans-jp); font-size: 13px; font-weight: 500;
+  letter-spacing: .08em; color: rgba(250, 250, 247, .7);
+  position: relative;
+  transition: color 240ms var(--easing);
+}
+.company-anchors a:hover { color: var(--c-brass); }
+.company-anchors a::after {
+  content: ""; position: absolute; left: 50%; bottom: 0;
+  width: 0; height: 2px; background: var(--c-brass);
+  transform: translateX(-50%);
+  transition: width 240ms var(--easing);
+}
+.company-anchors a:hover::after { width: 24px; }
+
 /* Paper section background variant — flip text & border to dark tones */
 .section--paper .company-table th,
 .section--paper .company-table td { border-bottom-color: var(--c-line); }

@@ -1,102 +1,35 @@
-<!doctype html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8" />
-  <base href="/nichiwa-kensetsu/" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#0F1B2D" />
-  <title>企業情報｜株式会社 日和建設 ─ 株式会社 日和建設</title>
-  <meta name="description" content="株式会社 日和建設の企業情報。代表挨拶・会社概要・沿革・事業所一覧・社員紹介・許可資格を一覧でご紹介します。" />
-  <meta name="format-detection" content="telephone=no" />
-  <meta name="robots" content="index, follow, max-image-preview:large" />
-  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
-  <meta name="referrer" content="strict-origin-when-cross-origin" />
+#!/usr/bin/env python3
+"""
+/company/ を 6サブページ統合の単一ページとして再構築。
 
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="企業情報｜株式会社 日和建設 ─ 株式会社 日和建設" />
-  <meta property="og:description" content="株式会社 日和建設の企業情報。代表挨拶・会社概要・沿革・事業所一覧・社員紹介・許可資格を一覧でご紹介します。" />
-  <meta property="og:image" content="https://nichiwa-kensetu.com/assets/img/message/message-hero.webp" />
+旧構成:
+  /company/index.html  → 6カードグリッド (each links to sub)
+  /company/message.html
+  /company/profile.html
+  /company/history.html
+  /company/offices.html
+  /company/employees.html
+  /company/license.html
 
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <link rel="canonical" href="https://nichiwa-kensetu.com/company/" />
+新構成:
+  /company/index.html  → 全コンテンツを縦長セクションで一画面に
+  ── サブページは削除（同じ内容は /company/#anchor で参照可）
+  ── ホームから1クリックで全部見える設計
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet" />
+実行: python3 scripts/build_unified_company.py
+"""
+from pathlib import Path
+import sys
+sys.path.insert(0, str(Path(__file__).parent))
+from generate_section_pages import HEADER, FOOTER, head, page_hero, breadcrumb_inline
 
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <link rel="stylesheet" href="assets/css/animations.css" />
-</head>
-<body>
+ROOT = Path(__file__).resolve().parents[1]
+OUT = ROOT / "docs" / "company" / "index.html"
 
-<header class="site-header is-scrolled" role="banner">
-  <div class="site-header__inner">
-    <a class="brand" href="index.html" aria-label="株式会社 日和建設 トップ">
-      <img class="brand__logo" src="assets/img/brand/logo.png" alt="株式会社 日和建設" width="200" height="40" loading="eager" />
-    </a>
-
-    <nav class="global-nav" aria-label="グローバルナビゲーション">
-      <a href="company/">企業情報</a>
-      <a href="services/">事業内容</a>
-      <a href="blog/">ブログ</a>
-      <a href="recruit.html">採用情報</a>
-      <a href="contact.html">お問い合わせ</a>
-    </nav>
-
-    <div class="header-actions">
-      <button type="button" class="menu-btn" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-nav">
-        <span class="bar" aria-hidden="true"></span>
-      </button>
-    </div>
-  </div>
-</header>
-
-<nav id="mobile-nav" class="mobile-nav" aria-label="モバイルメニュー">
-  <ul>
-    <li><a href="company/">企業情報<small>COMPANY</small></a></li>
-    <li><a href="services/">事業内容<small>SERVICES</small></a></li>
-    <li><a href="services/demolition.html">解体事業<small>DISMANTLING</small></a></li>
-    <li><a href="services/asbestos.html">アスベスト工事業<small>ASBESTOS</small></a></li>
-    <li><a href="services/coating.html">塗装工事業<small>COATING</small></a></li>
-    <li><a href="blog/">ブログ<small>BLOG</small></a></li>
-    <li><a href="recruit.html">採用情報<small>RECRUIT</small></a></li>
-    <li><a href="contact.html">お問い合わせ<small>CONTACT</small></a></li>
-  </ul>
-  <div class="mobile-nav__contact">
-    <a href="contact.html">お問い合わせ<small>CONTACT</small></a>
-  </div>
-</nav>
-<section class="page-hero">
-  <div class="page-hero__bg" aria-hidden="true">
-    <img src="assets/img/message/message-hero.webp" alt="" />
-  </div>
-  <div class="container">
-    <div class="page-hero__inner">
-      <nav class="breadcrumbs" aria-label="パンくず">
-        <ol><li><a href="index.html">ホーム</a></li><li aria-current="page">企業情報</li></ol>
-      </nav>
-      <span class="page-hero__cat">COMPANY ／ 企業情報</span>
-      <h1 class="page-hero__title">
-        <small>Company</small>
-        企業情報。
-      </h1>
-      <p class="page-hero__lede">代表挨拶から許可・資格まで、株式会社 日和建設に関する情報をすべてこのページにまとめています。</p>
-    </div>
-  </div>
-</section>
-<nav class="company-anchors" aria-label="ページ内ナビゲーション">
-  <div class="container">
-    <ul>
-      <li><a href="#message">代表挨拶</a></li>
-      <li><a href="#profile">会社概要</a></li>
-      <li><a href="#history">沿革</a></li>
-      <li><a href="#offices">事業所</a></li>
-      <li><a href="#people">社員紹介</a></li>
-      <li><a href="#license">許可・資格</a></li>
-    </ul>
-  </div>
-</nav>
-<section id="message" class="section section--navy">
+# ============================================================
+# Section 1: 代表挨拶
+# ============================================================
+MESSAGE_SECTION = '''<section id="message" class="section section--navy">
   <div class="container">
     <span class="eyebrow reveal">MESSAGE</span>
     <h2 class="section-title reveal" style="margin-bottom:48px;">代表挨拶。</h2>
@@ -121,7 +54,12 @@
     </div>
   </div>
 </section>
-<section id="profile" class="section section--paper">
+'''
+
+# ============================================================
+# Section 2: 会社概要
+# ============================================================
+PROFILE_SECTION = '''<section id="profile" class="section section--paper">
   <div class="container">
     <span class="eyebrow reveal">PROFILE</span>
     <h2 class="section-title reveal" style="margin-bottom:48px;">会社概要。</h2>
@@ -148,7 +86,12 @@
     </div>
   </div>
 </section>
-<section id="history" class="history">
+'''
+
+# ============================================================
+# Section 3: 沿革
+# ============================================================
+HISTORY_SECTION = '''<section id="history" class="history">
   <div class="container">
     <span class="eyebrow reveal">HISTORY</span>
     <h2 class="section-title reveal" style="margin-bottom:24px;">沿革。</h2>
@@ -200,7 +143,12 @@
     </ol>
   </div>
 </section>
-<section id="offices" class="section section--paper">
+'''
+
+# ============================================================
+# Section 4: 事業所一覧
+# ============================================================
+OFFICES_SECTION = '''<section id="offices" class="section section--paper">
   <div class="container">
     <span class="eyebrow reveal">OFFICES</span>
     <h2 class="section-title reveal" style="margin-bottom:48px;">事業所一覧。</h2>
@@ -245,7 +193,12 @@
     </div>
   </div>
 </section>
-<section id="people" class="section section--navy">
+'''
+
+# ============================================================
+# Section 5: 社員紹介
+# ============================================================
+EMPLOYEES_SECTION = '''<section id="people" class="section section--navy">
   <div class="container">
     <span class="eyebrow reveal">OUR PEOPLE</span>
     <h2 class="section-title reveal" style="margin-bottom:24px;">営業メンバー。</h2>
@@ -279,7 +232,12 @@
     </div>
   </div>
 </section>
-<section id="license" class="section section--paper">
+'''
+
+# ============================================================
+# Section 6: 許可・資格
+# ============================================================
+LICENSE_SECTION = '''<section id="license" class="section section--paper">
   <div class="container">
     <span class="eyebrow reveal">LICENSE</span>
     <h2 class="section-title reveal" style="margin-bottom:48px;">許可・資格。</h2>
@@ -291,64 +249,55 @@
     </div>
   </div>
 </section>
-<footer class="site-footer">
+'''
+
+# ============================================================
+# In-page anchor nav (sticky on PC, simple list on mobile)
+# ============================================================
+ANCHOR_NAV = '''<nav class="company-anchors" aria-label="ページ内ナビゲーション">
   <div class="container">
-    <div class="footer-grid">
-      <div>
-        <span class="brand brand--footer" aria-hidden="true">
-          <img class="brand__logo" src="assets/img/brand/logo.png" alt="" width="200" height="40" loading="lazy" />
-        </span>
-        <p style="margin-top:20px;">
-          〒599-8126<br />大阪府堺市東区大美野 171-36<br />
-          TEL <a href="tel:0722390126">072-239-0126</a><br />
-          FAX 072-236-6491
-        </p>
-      </div>
-      <div>
-        <h4>SERVICES</h4>
-        <ul>
-          <li><a href="services/demolition.html">解体工事</a></li>
-          <li><a href="services/asbestos.html">アスベスト除去</a></li>
-          <li><a href="services/coating.html">塗装・外壁工事</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>COMPANY</h4>
-        <ul>
-          <li><a href="company/">企業情報</a></li>
-          <li><a href="company/#message">代表挨拶</a></li>
-          <li><a href="company/#profile">会社概要</a></li>
-          <li><a href="company/#history">沿革</a></li>
-          <li><a href="company/#offices">事業所</a></li>
-          <li><a href="company/#people">社員紹介</a></li>
-          <li><a href="company/#license">許可・資格</a></li>
-          <li><a href="blog/">ブログ</a></li>
-          <li><a href="recruit.html">採用情報</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>CONTACT</h4>
-        <ul>
-          <li><a href="contact.html">お問い合わせ</a></li>
-          <li><a href="privacy.html">プライバシーポリシー</a></li>
-          <li style="opacity:.6; margin-top:14px;">本社 ／ 大阪府堺市東区</li>
-          <li style="opacity:.6;">南大阪営業所 / 東京営業所</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <span>© 2021–<span data-current-year>2026</span> NICHIWA KENSETSU CO., LTD.</span>
-      <span>大阪府知事 解体業許可 第 1494 号</span>
-    </div>
+    <ul>
+      <li><a href="#message">代表挨拶</a></li>
+      <li><a href="#profile">会社概要</a></li>
+      <li><a href="#history">沿革</a></li>
+      <li><a href="#offices">事業所</a></li>
+      <li><a href="#people">社員紹介</a></li>
+      <li><a href="#license">許可・資格</a></li>
+    </ul>
   </div>
-</footer>
+</nav>
+'''
 
-<button type="button" class="to-top" aria-label="ページ上部へ戻る">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" aria-hidden="true"><line x1="3" y1="12" x2="20" y2="12"/><polyline points="14 6 20 12 14 18"/></svg>
-</button>
 
-<script src="assets/js/utils.js" defer></script>
-<script src="assets/js/main.js" defer></script>
-</body>
-</html>
+def main():
+    bc = breadcrumb_inline([("ホーム", "index.html"), ("企業情報", "")])
+    html = head(
+        "企業情報｜株式会社 日和建設",
+        "株式会社 日和建設の企業情報。代表挨拶・会社概要・沿革・事業所一覧・社員紹介・許可資格を一覧でご紹介します。",
+        "https://nichiwa-kensetu.com/company/",
+        "/assets/img/message/message-hero.webp",
+    )
+    html += HEADER + "\n"
+    html += page_hero(
+        "企業情報", "COMPANY",
+        "企業情報。",
+        "Company",
+        "代表挨拶から許可・資格まで、株式会社 日和建設に関する情報をすべてこのページにまとめています。",
+        "assets/img/message/message-hero.webp",
+        bc,
+    )
+    html += ANCHOR_NAV
+    html += MESSAGE_SECTION
+    html += PROFILE_SECTION
+    html += HISTORY_SECTION
+    html += OFFICES_SECTION
+    html += EMPLOYEES_SECTION
+    html += LICENSE_SECTION
+    html += FOOTER
+    html += "\n</body>\n</html>\n"
+    OUT.write_text(html, encoding="utf-8")
+    print(f"✓ {OUT.relative_to(ROOT)} ({len(html)} bytes)")
+
+
+if __name__ == "__main__":
+    main()
