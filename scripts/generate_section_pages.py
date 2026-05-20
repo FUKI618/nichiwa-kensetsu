@@ -28,10 +28,6 @@ HEADER = '''<header class="site-header is-scrolled" role="banner">
       <a href="company/">企業情報</a>
       <a href="services/">事業内容</a>
       <a href="works/">施工事例</a>
-      <a href="sustainability/">サステナビリティ</a>
-      <a href="culture/">人的資本経営</a>
-      <a href="blog/">ブログ</a>
-      <a href="news/">お知らせ</a>
       <a href="recruit.html">採用情報</a>
     </nav>
 
@@ -54,19 +50,17 @@ HEADER = '''<header class="site-header is-scrolled" role="banner">
 <nav id="mobile-nav" class="mobile-nav" aria-label="モバイルメニュー">
   <ul>
     <li><a href="company/">企業情報<small>COMPANY</small></a></li>
-    <li><a href="company/philosophy.html">経営理念<small>PHILOSOPHY</small></a></li>
-    <li><a href="company/message.html">代表メッセージ<small>MESSAGE</small></a></li>
+    <li><a href="company/message.html">代表挨拶<small>MESSAGE</small></a></li>
+    <li><a href="company/profile.html">会社概要<small>PROFILE</small></a></li>
+    <li><a href="company/history.html">沿革<small>HISTORY</small></a></li>
+    <li><a href="company/offices.html">事業所<small>OFFICES</small></a></li>
+    <li><a href="company/employees.html">社員紹介<small>OUR PEOPLE</small></a></li>
+    <li><a href="company/license.html">許可・資格<small>LICENSE</small></a></li>
     <li><a href="services/">事業内容<small>SERVICES</small></a></li>
     <li><a href="services/demolition.html">解体工事<small>DEMOLITION</small></a></li>
     <li><a href="services/asbestos.html">アスベスト除去<small>ASBESTOS</small></a></li>
     <li><a href="services/coating.html">塗装・外壁工事<small>COATING</small></a></li>
     <li><a href="works/">施工事例<small>WORKS</small></a></li>
-    <li><a href="sustainability/">サステナビリティ<small>SUSTAINABILITY</small></a></li>
-    <li><a href="culture/">人的資本経営<small>OUR PEOPLE</small></a></li>
-    <li><a href="strengths/">私たちの強み<small>STRENGTHS</small></a></li>
-    <li><a href="blog/">ブログ<small>BLOG</small></a></li>
-    <li><a href="news/">お知らせ<small>NEWS</small></a></li>
-    <li><a href="company/profile.html">会社概要<small>PROFILE</small></a></li>
     <li><a href="recruit.html">採用情報<small>RECRUIT</small></a></li>
     <li><a href="contact.html">お問い合わせ<small>CONTACT</small></a></li>
   </ul>
@@ -251,19 +245,14 @@ PAGES["company/index.html"] = {
     "bg": "assets/img/hero/hero-real.webp",
     "sections": [
         ("ABOUT", "私たちについて", [
-            {"img": "assets/img/services/demolition.webp", "title": "経営理念", "num_en": "PHILOSOPHY", "desc": "「壊すだけでは、終わらない」。日和建設が掲げる三つの価値観 ─ 建物への敬意、近隣への配慮、仕事への誠実 ─ をご紹介します。", "href": "company/philosophy.html"},
-            {"img": "assets/img/reasons/supervisor.webp", "title": "代表メッセージ", "num_en": "MESSAGE", "desc": "代表取締役 吉田 光輝が、創業の背景と日和建設がこれから向き合う仕事への想いをお伝えします。", "href": "company/message.html"},
-            {"img": "assets/img/services/coating.webp", "title": "会社概要", "num_en": "PROFILE", "desc": "商号・所在地・許認可・資本金・従業員数など、株式会社 日和建設の基本情報。", "href": "company/profile.html"},
+            {"img": "assets/img/reasons/supervisor.webp", "title": "代表挨拶", "num_en": "MESSAGE", "desc": "代表取締役 吉田 光輝より、日和建設の理念「平和」と、解体・アスベスト除去工事への取り組み姿勢をお伝えします。", "href": "company/message.html"},
+            {"img": "assets/img/services/coating.webp", "title": "会社概要", "num_en": "PROFILE", "desc": "商号・代表取締役・設立・資本金・従業員数・所在地・許認可・取引銀行など、株式会社 日和建設の基本情報。", "href": "company/profile.html"},
+            {"img": "assets/img/services/demolition.webp", "title": "沿革", "num_en": "HISTORY", "desc": "2017年のアスベスト除去業・塗装業開始から、2021年の株式会社 日和建設 設立まで。歩んできた事業領域の拡張をご紹介します。", "href": "company/history.html"},
         ]),
-        ("STRUCTURE", "組織と拠点", [
-            {"img": "assets/img/reasons/supervisor.webp", "title": "役員一覧", "num_en": "LEADERSHIP", "desc": "代表取締役 吉田 光輝と、現場を知る経営層。日和建設の意思決定者をご紹介します。", "href": "company/leadership.html"},
-            {"img": "assets/img/hero/hero-real.webp", "title": "事業所一覧", "num_en": "OFFICES", "desc": "本社（堺市東区）／南大阪営業所／東京営業所の三拠点で、関西と関東圏に対応。", "href": "company/offices.html"},
-            {"img": "assets/img/services/coating.webp", "title": "企業活動の基盤", "num_en": "FOUNDATION", "desc": "ガバナンス・コンプライアンス・リスクマネジメント・倫理 ── 私たちの土台を支える四つの柱。", "href": "company/foundation.html"},
-        ]),
-        ("HISTORY &amp; CREDENTIALS", "沿革・許可", [
-            {"img": "assets/img/services/asbestos.webp", "title": "沿革・歴史", "num_en": "HISTORY", "desc": "2021年7月、堺の事務所5名で創業。創業からの足どりと節目をご紹介します。", "href": "company/history.html"},
-            {"img": "assets/img/company/permit.webp", "title": "許可・資格", "num_en": "LICENSE", "desc": "大阪府知事 解体業許可 第1494号。当社の保有許可・資格・所属団体について。", "href": "company/license.html"},
-            {"img": "assets/img/services/demolition.webp", "title": "事業内容", "num_en": "SERVICES", "desc": "解体工事・アスベスト除去・塗装の三事業について、それぞれの取り組みをご紹介します。", "href": "services/"},
+        ("PEOPLE &amp; OFFICES", "拠点とメンバー", [
+            {"img": "assets/img/hero/hero-real.webp", "title": "事業所一覧", "num_en": "OFFICES", "desc": "本社（堺市東区）／南大阪営業所（堺市北区）／東京営業所（港区南青山）の三拠点で、関西全域および関東圏に対応。", "href": "company/offices.html"},
+            {"img": "assets/img/services/coating.webp", "title": "社員紹介", "num_en": "OUR PEOPLE", "desc": "解体・アスベスト・塗装の現場をご依頼主・近隣の皆様につなぐ、日和建設 営業部のメンバーをご紹介します。", "href": "company/employees.html"},
+            {"img": "assets/img/company/permit.webp", "title": "許可・資格", "num_en": "LICENSE", "desc": "解体業許可証 大阪府知事 答解ー３ 1494 号 ／ 産業廃棄物 収集運搬。当社の保有許可・登録について。", "href": "company/license.html"},
         ]),
     ],
 }
@@ -288,8 +277,8 @@ PAGES["services/index.html"] = {
     ],
 }
 
-# ----- /sustainability/index.html -----
-PAGES["sustainability/index.html"] = {
+# ----- (sustainability/strengths removed: source-of-truth fabricated) -----
+_unused_sustainability_cfg = {
     "title": "サステナビリティ｜株式会社 日和建設",
     "description": "産業廃棄物リサイクル率92%、低騒音重機使用率98%、重大クレーム発生0件。日和建設の環境と社会への取り組み。",
     "canonical": "https://nichiwa-kensetu.com/sustainability/",
@@ -328,8 +317,8 @@ PAGES["sustainability/index.html"] = {
     "sections": [],
 }
 
-# ----- /strengths/index.html -----
-PAGES["strengths/index.html"] = {
+# ----- (strengths removed: KPI claims unverified) -----
+_unused_strengths_cfg = {
     "title": "私たちの強み｜株式会社 日和建設",
     "description": "解体実績1,000件超・アスベスト500件超・年間300件超・重大クレーム0。日和建設が選ばれる4つの理由。",
     "canonical": "https://nichiwa-kensetu.com/strengths/",
@@ -369,8 +358,8 @@ PAGES["strengths/index.html"] = {
     "sections": [],
 }
 
-# ----- /news/index.html -----
-PAGES["news/index.html"] = {
+# ----- (news removed: source items not on original site) -----
+_unused_news_cfg = {
     "title": "お知らせ｜株式会社 日和建設",
     "description": "日和建設からのお知らせ。プレスリリース、メディア掲載、受賞報告、採用情報など最新情報をお届けします。",
     "canonical": "https://nichiwa-kensetu.com/news/",
