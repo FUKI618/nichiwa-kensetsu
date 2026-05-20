@@ -80,6 +80,58 @@ text = text.replace(
     '塗装の技術だけではなく、外壁の知識も磨き上げようと常に前向きに作業を行っております。日和建設 外壁診断のプロによる診断を、ぜひ一度お試しください。',
 )
 
+# X) FLOW セクション全削除（コーポレートHPのトップに工程フローは置かない）
+text = re.sub(
+    r'<!-- =+\s*\n\s*FLOW.*?(?=<!-- =+\s*\n\s*(?:COMPANY|FAQ|FOOTER))',
+    '',
+    text,
+    flags=re.DOTALL,
+)
+
+# X) COMPANY 会社概要ブロック削除（既に /company/profile.html に専用ページあり）
+text = re.sub(
+    r'<!-- =+\s*\n\s*COMPANY.*?(?=<!-- =+\s*\n\s*(?:FAQ|FOOTER))',
+    '',
+    text,
+    flags=re.DOTALL,
+)
+
+# X) FAQ セクション全削除（コーポレートHPでは無い。LPパターン）
+text = re.sub(
+    r'<!-- =+\s*\n\s*FAQ.*?(?=<!-- =+\s*\n\s*FOOTER)',
+    '',
+    text,
+    flags=re.DOTALL,
+)
+
+# X) JSON-LD から FAQPage / HowTo を削除（ページ上にもう存在しない）
+text = re.sub(
+    r',\s*\{\s*"@type":\s*"FAQPage".*?\}(?=\s*[,\]])',
+    '',
+    text,
+    flags=re.DOTALL,
+)
+text = re.sub(
+    r',\s*\{\s*"@type":\s*"HowTo".*?\}(?=\s*[,\]])',
+    '',
+    text,
+    flags=re.DOTALL,
+)
+
+# X) フッターの「FAQ」「料金プラン」「経営理念」など削除済セクションへのリンクを除去
+for fragment in [
+    r'\s*<li><a href="#faq">FAQ</a></li>',
+    r'\s*<li><a href="#flow">[^<]+</a></li>',
+    r'\s*<li><a href="#company">[^<]+</a></li>',
+    r'\s*<li><a href="#philosophy">[^<]+</a></li>',
+    r'\s*<li><a href="#ceo-message">[^<]+</a></li>',
+    r'\s*<li><a href="#sustainability">[^<]+</a></li>',
+    r'\s*<li><a href="#history">[^<]+</a></li>',
+    r'\s*<li><a href="#news">[^<]+</a></li>',
+]:
+    text = re.sub(fragment, '', text)
+
+# (元の 5) はもう不要になったが、念のため架空テキストの逐一削除を残す
 # 5) FAQ セクション全削除（架空Q&A 8問） → 元サイトの実5問へ置換
 real_faq = '''<section id="faq" class="section" aria-label="よくあるご質問">
   <div class="container">
