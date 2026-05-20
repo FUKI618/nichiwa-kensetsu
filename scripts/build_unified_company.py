@@ -202,30 +202,39 @@ EMPLOYEES_SECTION = '''<section id="people" class="section section--navy">
   <div class="container">
     <span class="eyebrow reveal">OUR PEOPLE</span>
     <h2 class="section-title reveal" style="margin-bottom:24px;">営業メンバー。</h2>
-    <p class="section-lede reveal" style="margin-bottom:48px;">解体・アスベスト・塗装の現場をご依頼主・近隣の皆様につなぐ、日和建設 営業部のメンバーをご紹介します。</p>
+    <p class="section-lede reveal" style="margin-bottom:48px;">解体・アスベスト除去・塗装の現場と、ご依頼主・近隣の皆様をつなぐのが営業の仕事です。日和建設 営業部のメンバーをご紹介します。</p>
 
     <div class="services-grid reveal-stagger" style="margin-top:48px;">
       <article class="card-service">
-        <div class="card-service__body" style="padding-top:40px;">
+        <div class="card-service__media">
+          <img src="assets/img/people/maeda.webp" alt="前田 凌" loading="lazy" />
+        </div>
+        <div class="card-service__body">
           <span class="card-service__num">SALES</span>
           <h3 class="card-service__title">前田 凌<small>RYO MAEDA ／ 営業部</small></h3>
-          <p class="card-service__desc">弊社に入社し、まだまだ勉強中の身ではありますが、【仕事】とは何か、常に先のことを考え予測し、人との繋がりの難しさを実感いたしました。その経験を生かし、お客様・先方様に少しでもお力になりたいと考えております。</p>
+          <p class="card-service__desc">日和建設に入社し、まだまだ勉強中の身ではありますが、「仕事とは何か」を常に問い、先のことを考え予測しながら、人との繋がりの大切さを日々実感しています。その経験を活かし、お客様・先方様に少しでもお力添えできるよう尽力してまいります。</p>
           <span class="card-service__bar" aria-hidden="true"></span>
         </div>
       </article>
       <article class="card-service">
-        <div class="card-service__body" style="padding-top:40px;">
+        <div class="card-service__media">
+          <img src="assets/img/people/ito.webp" alt="伊藤 康文" loading="lazy" />
+        </div>
+        <div class="card-service__body">
           <span class="card-service__num">SALES</span>
           <h3 class="card-service__title">伊藤 康文<small>YASUFUMI ITO ／ 営業部</small></h3>
-          <p class="card-service__desc">お客様への価値のご提供と、日和建設に解体工事・アスベスト除去工事などの工事をご依頼いただいて「よかった」と言っていただけるように、日々営業活動に全力投球しています。</p>
+          <p class="card-service__desc">お客様への価値のご提供と、「日和建設に解体工事・アスベスト除去工事をご依頼いただいて本当によかった」と言っていただけることを目指し、日々の営業活動に全力投球しています。一つひとつの現場を、確実に、誠実に。</p>
           <span class="card-service__bar" aria-hidden="true"></span>
         </div>
       </article>
       <article class="card-service">
-        <div class="card-service__body" style="padding-top:40px;">
+        <div class="card-service__media">
+          <img src="assets/img/people/higoki.webp" alt="日極 周英" loading="lazy" />
+        </div>
+        <div class="card-service__body">
           <span class="card-service__num">SALES</span>
           <h3 class="card-service__title">日極 周英<small>SHUEI HIGOKI ／ 営業部</small></h3>
-          <p class="card-service__desc">関係者の方、お客様、全員に喜んでもらえるよう、努力を絶やしません。</p>
+          <p class="card-service__desc">関係者の皆様・お客様・その先にいるすべての方に喜んでいただけるよう、現場と営業のあいだに立ち、努力を絶やしません。小さな一歩でも、着実に積み重ねていく姿勢を大切にしています。</p>
           <span class="card-service__bar" aria-hidden="true"></span>
         </div>
       </article>
