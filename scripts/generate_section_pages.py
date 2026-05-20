@@ -27,6 +27,8 @@ HEADER = '''<header class="site-header is-scrolled" role="banner">
     <nav class="global-nav" aria-label="グローバルナビゲーション">
       <a href="company/">企業情報</a>
       <a href="services/">事業内容</a>
+      <a href="strengths/">強み</a>
+      <a href="sustainability/">サステナビリティ</a>
       <a href="blog/">ブログ</a>
       <a href="recruit.html">採用情報</a>
       <a href="contact.html">お問い合わせ</a>
@@ -47,6 +49,8 @@ HEADER = '''<header class="site-header is-scrolled" role="banner">
     <li><a href="services/demolition.html">解体事業<small>DISMANTLING</small></a></li>
     <li><a href="services/asbestos.html">アスベスト工事業<small>ASBESTOS</small></a></li>
     <li><a href="services/coating.html">塗装工事業<small>COATING</small></a></li>
+    <li><a href="strengths/">強み・技術力<small>STRENGTHS</small></a></li>
+    <li><a href="sustainability/">サステナビリティ<small>SUSTAINABILITY</small></a></li>
     <li><a href="blog/">ブログ<small>BLOG</small></a></li>
     <li><a href="recruit.html">採用情報<small>RECRUIT</small></a></li>
     <li><a href="contact.html">お問い合わせ<small>CONTACT</small></a></li>
@@ -86,7 +90,8 @@ FOOTER = '''<footer class="site-footer">
           <li><a href="company/#history">沿革</a></li>
           <li><a href="company/#offices">事業所</a></li>
           <li><a href="company/#people">社員紹介</a></li>
-          <li><a href="company/#license">許可・資格</a></li>
+          <li><a href="strengths/">強み・技術力</a></li>
+          <li><a href="sustainability/">サステナビリティ</a></li>
           <li><a href="blog/">ブログ</a></li>
           <li><a href="recruit.html">採用情報</a></li>
         </ul>
